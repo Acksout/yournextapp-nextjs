@@ -25,22 +25,22 @@ const Page = () => {
                 </div>
             </div>
 
-            // Chat History
+            {/*Chat History*/}
             <div className="flex flex-1 flex-col items-center justify-end">
-                <div className="flex flex-1 flex-col items-center justify-end">
-                    <div className="mb-2 flex w-1/2 items-center rounded border-2 border-black p-2">
+                <div className="flex w-1/2 flex-1 flex-col items-center justify-end">
+                    <div className="mb-2 flex w-full items-center rounded border-2 border-black p-2">
                         <p>
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
                             labore et dolore magna aliqua.
                         </p>
                     </div>
-                    <div className="mb-2 flex w-1/2 items-center rounded border-2 border-black p-2">
+                    <div className="mb-2 flex w-full items-center rounded border-2 border-black p-2">
                         <p>
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
                             labore et dolore magna aliqua.
                         </p>
                     </div>
-                    <div className="mb-2 flex w-1/2 items-center rounded border-2 border-black p-2">
+                    <div className="mb-2 flex w-full items-center rounded border-2 border-black p-2">
                         <p>
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
                             labore et dolore magna aliqua.
@@ -55,16 +55,14 @@ const Page = () => {
                         </p>
                     </div>
                 </div>
-                // Text Area
-                <div className="flex flex-row items-center justify-center">
+                {/*Text Area*/}
+                <div className="flex w-1/2 flex-row items-center justify-center">
                     <Textarea
-
                         placeholder="Enter keywords or the tech stack. Just keywords for better response."
-                        className="mt-2 mb-4 h-24 w-1/2 resize-none border-2 border-black"
+                        className="mt-2 mb-4 h-24 w-full resize-none border-2 border-black"
                     />
-                    <Button className="m-2" onClick={handleTextArea}>SEND</Button>
+                    <Button className="mt-2 mb-4 ml-2" onClick={handleTextArea}>SEND</Button>
                 </div>
-
             </div>
         </div>
     );
