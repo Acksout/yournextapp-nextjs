@@ -3,6 +3,8 @@
 import React, {useState} from "react";
 import {Textarea} from "@/components/ui/textarea";
 import {Button} from "@/components/ui/button";
+import mongoose from "../app/api/db/route.js";
+import ChatHistoryModel from "@/models/ChatHistoryModel.js";
 
 const InfoForm = ({addResponse}) => {
     const [text, setText] = useState("");
@@ -28,6 +30,21 @@ const InfoForm = ({addResponse}) => {
                 if (response.ok) {
                     const data = await response.json();
                     console.log(data);
+                    // Pushing the response to DB
+
+                    // MONGODB STUFF HERE
+                    fetch("/api/db", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                        },
+                        body: JSON.stringify({userPrompt: text, response: data}),
+                    })
+                        .then(response => response.json())
+                        .then(data => console.log(data))
+                        .catch(error => console.error(error));
+
+
                     addResponse(data); // Updating parent state
                     // Work with the data
                 } else {

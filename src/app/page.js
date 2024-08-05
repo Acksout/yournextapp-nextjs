@@ -10,6 +10,7 @@ const Page = () => {
     return (
         <main>
             <div className="relative flex h-screen overflow-hidden">
+                {/*Logout Button*/}
                 <button className="absolute top-4 right-4">
                     <Image src="exit-svgrepo-com.svg" alt="exit" height="40" width="40"/>
                 </button>
