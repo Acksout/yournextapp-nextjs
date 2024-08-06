@@ -11,7 +11,7 @@ const InfoForm = ({addResponse}) => {
 
     const handleTextArea = (event) => {
         setText(event.target.value);
-        console.log(text);
+        // console.log(text);
     };
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -29,20 +29,20 @@ const InfoForm = ({addResponse}) => {
                 });
                 if (response.ok) {
                     const data = await response.json();
-                    console.log(data);
+                    // console.log(data);
                     // Pushing the response to DB
 
                     // MONGODB STUFF HERE
-                    fetch("/api/db", {
-                        method: "POST",
-                        headers: {
-                            "Content-Type": "application/json",
-                        },
-                        body: JSON.stringify({userPrompt: text, response: data}),
-                    })
-                        .then(response => response.json())
-                        .then(data => console.log(data))
-                        .catch(error => console.error(error));
+                    // fetch("/api/db", {
+                    //     method: "POST",
+                    //     headers: {
+                    //         "Content-Type": "application/json",
+                    //     },
+                    //     body: JSON.stringify({userPrompt: text, response: data}),
+                    // })
+                    //     .then(response => response.json())
+                    //     .then(data => console.log(data))
+                    //     .catch(error => console.error(error));
 
 
                     addResponse(data); // Updating parent state

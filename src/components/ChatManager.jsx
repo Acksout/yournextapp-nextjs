@@ -11,6 +11,7 @@ const ChatManager = () => {
     };
     return (
         <div className="flex flex-1 flex-col items-center justify-end">
+
             <ChatHistory oldResponse={oldResponses}/>
 
             <InfoForm addResponse={addResponse}/>

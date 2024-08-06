@@ -1,24 +1,7 @@
 import mongoose from "mongoose";
-import ChatHistoryModel from "@/models/ChatHistoryModel.js";
+// import ChatHistoryModel from "@/models/ChatHistoryModel.js";
+import connectDB from "@/lib/db";
 
-// MongoDB connection URL and options
-const dbUrl = "mongodb://localhost:27017/test/";
-const dbOptions = {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-};
-
-// Function to connect to MongoDB
-const connectDB = async () => {
-    if (mongoose.connection.readyState === 0) {
-        try {
-            await mongoose.connect(dbUrl, dbOptions);
-            console.log("Connected to MongoDB");
-        } catch (error) {
-            console.error("Error connecting to MongoDB:", error);
-        }
-    }
-};
 
 // GET request handler
 export async function GET(req) {

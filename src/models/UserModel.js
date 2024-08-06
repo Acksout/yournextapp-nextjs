@@ -10,6 +10,10 @@ const Schema = new mongoose.Schema({
         type: String,
         required: true
     },
+    userAvatar: {
+        type: String,
+        required: false
+    },
     createdAt: {
         type: Date,
         default: Date.now
