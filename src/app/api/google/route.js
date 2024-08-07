@@ -1,9 +1,15 @@
 import {NextResponse} from "next/server";
 import {GoogleGenerativeAI} from "@google/generative-ai";
+import { getAuth } from '@clerk/nextjs/server';
 
 const genAI = new GoogleGenerativeAI(process.env.GOOGLE_AI);
 
 export async function POST(req) {
+    const { userId } = getAuth(req);
+    if (!userId) {
+        return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+    }
+
     try {
         const {prompt} = await req.json();
         // Removed: let {prompt} = await req.json();
